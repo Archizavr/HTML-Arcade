@@ -9,7 +9,7 @@ class Coin {
         draw(context) {
             context.beginPath();
             context.arc(this.x + this.size/2, this.y + this.size/2, this.size/2, 0, Math.PI * 2, false);
-            context.endPath();
+            context.closePath();
             context.fillStyle = this.color[0];
             context.fill();
         }
