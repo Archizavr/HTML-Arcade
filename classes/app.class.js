@@ -17,13 +17,11 @@ class App {
 
     this.canvas.context.canvas.addEventListener("click", event => {
         const clickX = event.x - event.target.getBoundingClientRect().left;
-        const clickY = event.y - event.target.getBoundingClientRect().right;
+        const clickY = event.y - event.target.getBoundingClientRect().top;
 
         for (let i = 0; i < self.generator.coins.length; i++) {
-            if (clickX >= coin.x &&
-                clickX <= coin.x + coin.size &&
-                clickY >= coin.y &&
-                clickY <= coin.y + coin.size) {
+            const coin = self.generator.coins[i];
+            if (clickX >= coin.x && clickX <= coin.x + coin.size && clickY >= coin.y && clickY <= coin.y + coin.size) {
                     self.clickCoin(coin);
                 }
             }
